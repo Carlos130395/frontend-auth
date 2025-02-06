@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../index.css"; // Importar estilos
 
 const Profile = () => {
   const { token, logout } = useContext(AuthContext);
@@ -26,7 +27,7 @@ const Profile = () => {
   }, [token, logout, navigate]);
 
   return (
-    <div>
+    <div className="container">
       {profile ? (
         <>
           <h1>Bienvenido, {profile.username}</h1>
